@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: sync-phases
+  namespace: argo-cd
+spec:
+  destination:
+    namespace: sync-phases
+    server: "https://kubernetes.default.svc"
+  project: default
+  source:
+    path: sync-phases
+    repoURL: "https://github.com/nguyenbuitk/argocd-example-apps.git"
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal:
+    syncOptions:
+      - CreateNamespace=true

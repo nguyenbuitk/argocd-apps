@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: guestbook
+  namespace: argo-cd
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: poc
+        url: https://kubernetes.default.svc
+      - cluster: poc2
+        url: https://dev-ovng-poc2-lead.ovng.dev.myovcloud.com:6443
+  template:
+    metadata:
+      name: '{{cluster}}-guestbook'
+    spec:
+      destination:
+        namespace: guestbook
+        server: '{{url}}'
+      project: default
+      source:
+        path: guestbook
+        repoURL: "https://github.com/mabusaa/argocd-example-apps.git"
+        targetRevision: master
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
