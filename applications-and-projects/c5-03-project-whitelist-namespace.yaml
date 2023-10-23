@@ -6,6 +6,8 @@ spec:
   description: Dev Project
   sourceRepos:
   - '*'
+
+  # Only permit application to deploy on this repo
   destinations:
   - namespace: ns-1
     server: https://kubernetes.default.svc

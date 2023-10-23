@@ -1,3 +1,4 @@
+# example of using credential template
 apiVersion: v1
 kind: Secret
 metadata:

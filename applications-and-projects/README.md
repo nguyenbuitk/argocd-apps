@@ -16,3 +16,10 @@ ArgoCD supports the below tools as source and options relative to each tools: he
 - c4-application-directory-options.yaml
 - c4-application-helm-options.yaml
 - c4-application-kustomize-options.yaml
+
+## Chapter 5
+Create project and create application with project
+```bash
+k apply -f c5-01-project.yaml
+k apply -f c5-04-application-dev-project.yaml
+```

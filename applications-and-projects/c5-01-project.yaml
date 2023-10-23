@@ -2,6 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: demo-project
+
+# allow all repo and destination
 spec:
   description: Demo Project
   sourceRepos:
