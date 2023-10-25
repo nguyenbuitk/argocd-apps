@@ -15,7 +15,11 @@ spec:
       recurse: true
   syncPolicy:
     automated: 
+      # Default – no prune: when automated sync is enabled, by  default for safety automated sync will not delete resources when Argo CD detects the resource is no longer defined in 
+      # this feature is used to enable it
       prune: true
+      # By default, changes that are made to the live cluster will not trigger automated sync.
+      # This feature is used to enable it
       selfHeal: true
     syncOptions:
       - CreateNamespace=true 

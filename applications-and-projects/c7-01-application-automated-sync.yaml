@@ -14,8 +14,11 @@ spec:
     targetRevision: master
     directory:
       recurse: true
+  # For automated sync
   syncPolicy:
     automated: {}
+  
+  # For automated sync
     syncOptions:
       - CreateNamespace=true
 
